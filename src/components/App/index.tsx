@@ -9,11 +9,13 @@ const App: React.FC = () => {
   return (
     <Router>
       <Layout>
+
         <Switch>
           <Route path='/Uddannelse' component={EducationPage}/>
           <Route path='/Erfaring' component={ExperiencePage}/>
           <Route path='/' component={FrontPage}/>
         </Switch>
+        
       </Layout>
     </Router>
   );
