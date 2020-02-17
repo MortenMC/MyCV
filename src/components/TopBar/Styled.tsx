@@ -1,9 +1,19 @@
 import styled from 'styled-components';
+import * as colors from '../../theme/color'
 
 export const TopBarView = styled.div`
     height: 80px;
     width: 100%;
     
+`;
+
+export const TopBarContent = styled.div`
+    height: 100%;
+    justify-content: space-between;
+    display: flex;
+    background-color: ${colors.modernLightGrey};
+    border-radius: 25px;
+    box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.50);
 `;
 
 export const DropDownBody = styled.div`
@@ -12,20 +22,22 @@ export const DropDownBody = styled.div`
 `;
 
 export const DropDownLi = styled.li`
+    z-index: 1;
+    position: relative;
     margin-right: 50px;
     padding-right: 20px;
     padding-left: 20px;
     align-items: center;
-    color: #747474;
+    color: black;
     font-size: 25px;
     font-weight: 600;
     height: 80px;
     list-style-type: none;
     cursor: pointer;
-    background: #015000;
+    background: ${colors.modernLightGrey};
 
     &:hover{
-        background: #029000;
+        background: ${colors.modernMediumGrey};
     }
 `;
 

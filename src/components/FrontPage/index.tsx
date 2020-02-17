@@ -32,7 +32,7 @@ class FrontPage extends React.Component<Props, State> {
     render() {
         return (
             <FrontPageBackground>
-                <div style={{border: '2px solid black', display: 'flex', width: '90%', justifyContent: 'space-between'}}>  
+                <div style={{ display: 'flex', width: '90%', justifyContent: 'space-between'}}>  
                     <FrontPageView>
                         FrontPage
                     </FrontPageView>

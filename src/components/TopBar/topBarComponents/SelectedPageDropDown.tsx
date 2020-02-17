@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 import { connect } from 'react-redux';
 import { setSelectedPage } from '../../../redux/actions'
+import * as colors from '../../../theme/color'
 
 interface Props {
     selectedPage: string;
@@ -53,7 +54,7 @@ class SelectedPageDropDown extends React.Component<Props, State>{
         return (
             <div onMouseLeave={this.closeMenu}>
                 <DropDownBody >
-                    <DropDownLi onMouseEnter={this.showMenu} style={{background: '#015000', display: "flex" }}>
+                    <DropDownLi onMouseEnter={this.showMenu} style={{background: `${colors.modernLightGrey}`, display: "flex" }}>
                         <div style={{ display: "flex", justifyContent: "flex-start", minWidth: "90%"}}>
                             {this.props.selectedPage}
                         </div>
