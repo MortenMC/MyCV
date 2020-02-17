@@ -3,14 +3,16 @@ import styled from 'styled-components';
 export const TopBarView = styled.div`
     height: 80px;
     width: 100%;
+    
 `;
 
 export const DropDownBody = styled.div`
-    width: 200px;
+    width: 250px;
     max-width : 100%;
 `;
 
 export const DropDownLi = styled.li`
+    margin-right: 50px;
     padding-right: 20px;
     padding-left: 20px;
     align-items: center;

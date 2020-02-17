@@ -2,25 +2,29 @@ import * as React from 'react';
 import { DropDownLi, DropDownBody, ArrowDown, ArrowUp } from '../Styled';
 import { Link } from "react-router-dom";
 
+import { connect } from 'react-redux';
+import { setSelectedPage } from '../../../redux/actions'
+
 interface Props {
+    selectedPage: string;
+
+    setSelectedPage: any;
 }
 
 type State = {
     showMenu: boolean
     currentState: string;
     arrow: boolean;
-    pageState: string;
 }
 
-class SelectStateDropDown extends React.Component<Props, State>{
+class SelectedPageDropDown extends React.Component<Props, State>{
     dropdownMenu: any;
     constructor(props: Props) {
         super(props);
         this.state = {
             showMenu: false,
-            currentState: 'Forside',
+            currentState: this.props.selectedPage,
             arrow: false,
-            pageState: ''
         };
     }
 
@@ -40,6 +44,7 @@ class SelectStateDropDown extends React.Component<Props, State>{
     setSelectedStateView = (temp: String) =>  {
         this.setState({ currentState: temp.toString(), showMenu: false, arrow: false }, () => {
             document.removeEventListener('click', this.closeMenu);
+            
         })
     }
 
@@ -50,7 +55,7 @@ class SelectStateDropDown extends React.Component<Props, State>{
                 <DropDownBody >
                     <DropDownLi onMouseEnter={this.showMenu} style={{background: '#015000', display: "flex" }}>
                         <div style={{ display: "flex", justifyContent: "flex-start", minWidth: "90%"}}>
-                            {this.state.currentState === "Forside" ? "Forside" : this.state.currentState}
+                            {this.props.selectedPage}
                         </div>
                         <div style={{ display: "flex", justifyContent: "flex-end", maxWidth: "10%", alignItems: 'center'}}>
                             {this.state.arrow && <ArrowUp/> || <ArrowDown/>}
@@ -67,17 +72,17 @@ class SelectStateDropDown extends React.Component<Props, State>{
                             >
                                 <div style={{textAlign: 'center'}}>
                                     <Link to='/' style={{textDecoration: 'none'}}>
-                                        <DropDownLi onClick={() => this.setSelectedStateView("Forside")} style={{display: this.state.currentState !== "Forside" ? "flex" : "none"}}>
+                                        <DropDownLi onClick={() => this.setSelectedStateView("Forside")} style={{display: this.props.selectedPage !== "Forside" ? "flex" : "none"}}>
                                             Forside 
                                         </DropDownLi>
                                     </Link>
                                     <Link to='/Erfaring' style={{textDecoration: 'none'}}>
-                                        <DropDownLi onClick={() => this.setSelectedStateView("Erfaring")} style={{display: this.state.currentState !== "Erfaring" ? "flex" : "none"}}> 
+                                        <DropDownLi onClick={() => this.setSelectedStateView("Erfaring")} style={{display: this.props.selectedPage !== "Erfaring" ? "flex" : "none"}}> 
                                             Erfaring 
                                         </DropDownLi>
                                     </Link>
                                     <Link to='/Uddannelse' style={{textDecoration: 'none'}}>
-                                        <DropDownLi onClick={() => this.setSelectedStateView("Uddannelse")} style={{display: this.state.currentState !== "Uddannelse" ? "flex" : "none"}}>
+                                        <DropDownLi onClick={() => this.setSelectedStateView("Uddannelse")} style={{display: this.props.selectedPage !== "Uddannelse" ? "flex" : "none"}}>
                                             Uddannelse 
                                         </DropDownLi>
                                     </Link>
@@ -94,4 +99,16 @@ class SelectStateDropDown extends React.Component<Props, State>{
     }
 }
 
-export default SelectStateDropDown;
+type MapState = {
+    app: {
+        selectedPage: string;
+    }
+}
+
+const mapStateToProps = (state: MapState) => {
+    return {
+        selectedPage: state.app.selectedPage
+    };
+};
+
+export default connect(mapStateToProps, { setSelectedPage })(SelectedPageDropDown);
