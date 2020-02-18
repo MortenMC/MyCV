@@ -3,8 +3,7 @@ import * as colors from '../../theme/color'
 
 export const TopBarView = styled.div`
     height: 80px;
-    width: 100%;
-    
+    width: 70%;
 `;
 
 export const TopBarContent = styled.div`

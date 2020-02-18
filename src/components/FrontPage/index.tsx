@@ -1,8 +1,9 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
 
-import { FrontPageView, FrontPageBackground, StickyElement } from './Styled'
+import { FrontPageView, FrontPageBackground, FrontPageHeader, StickyElement, InformationHeader, InformationDiv, ElementTypeDiv, RealElementDiv } from './Styled'
 
+import { information, kontaktInformation } from '../../cvArrays/arrays'
 import { setSelectedPage } from '../../redux/actions';
 import picture from '../../theme/pictures/mig.png'
 
@@ -30,11 +31,36 @@ class FrontPage extends React.Component<Props, State> {
     }
 
     render() {
+
+        const informations = information
+        const kontakt = kontaktInformation
         return (
             <FrontPageBackground>
-                <div style={{ display: 'flex', width: '90%', justifyContent: 'space-between'}}>  
+                <div style={{ display: 'flex', width: '70%', justifyContent: 'space-between'}}>  
                     <FrontPageView>
-                        FrontPage
+                        <FrontPageHeader>Mig</FrontPageHeader>
+                            <div style={{ marginLeft: '40px', marginRight: '40px', fontSize: '20px'}}>
+                                <p>Jeg er en ung mand på 25 år der pr. 27. januar 2020 kan kalde sig nyuddannet datamatiker. 
+                                    Jeg søger et arbejde, hvor jeg kan bidrage med teknologierne; React, React-Native, JavaScript og TypeScript,
+                                    men jeg er samtidigt også villig til at lære nye ting og blive udfordret.
+                                    Jeg syntes at processen fra idé til realisering er spændende og samtidigt har jeg det sjovt med at udvikle og designe brugergrænseflader rent kodemæssigt. </p>
+                            </div>
+                        <InformationHeader>Personlig Information</InformationHeader>
+                        <div style={{ marginRight: '20px', marginLeft: '20px', display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between'}}>
+                            {informations.map((element: any) => 
+                            <InformationDiv>
+                                <ElementTypeDiv>{element.type}</ElementTypeDiv>
+                                <RealElementDiv>{element.content}</RealElementDiv>
+                            </InformationDiv>)}
+                        </div>
+                        <InformationHeader>Kontakt Info</InformationHeader>
+                        <div style={{ marginRight: '20px', marginLeft: '20px', display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between'}}>
+                            {kontakt.map((element: any) => 
+                            <InformationDiv>
+                                <ElementTypeDiv>{element.type}</ElementTypeDiv>
+                                <RealElementDiv>{element.content}</RealElementDiv>
+                            </InformationDiv>)}
+                        </div>      
                     </FrontPageView>
 
                     <StickyElement src={picture} alt={picture}/>
