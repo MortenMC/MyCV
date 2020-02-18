@@ -42,14 +42,14 @@ class ExperiencePage extends React.Component<Props, State> {
                             <ExperiencePageView>
                                 <div style={{ width: '50%'}}>
                                     <div style={{margin: '40px'}}>
-                                        <div style={{textAlign: 'right'}}>{element.dateFrom} - {element.dateTo}</div>
-                                        <div style={{textAlign: 'right'}}>{element.firm}</div>
+                                        <div style={{textAlign: 'right', fontSize: '20px'}}>{element.dateFrom} - {element.dateTo}</div>
+                                        <div style={{textAlign: 'right', fontSize: '20px'}}>{element.firm}</div>
                                     </div>
                                 </div>
                                 
                                 <div style={{height: '100px', width: '2px', backgroundColor: '#00000025', margin: '20px'}}></div>
                                 <div style={{ width: '50%'}}>
-                                    <div style={{margin: '40px', textAlign: 'left'}}>{element.description}</div>
+                                    <div style={{margin: '40px', textAlign: 'left', fontSize: '20px'}}>{element.description}</div>
                                 </div>
                             </ExperiencePageView>
                             <TimeLineContainer/>
