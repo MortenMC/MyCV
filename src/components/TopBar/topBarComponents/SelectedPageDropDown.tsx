@@ -73,17 +73,17 @@ class SelectedPageDropDown extends React.Component<Props, State>{
                             >
                                 <div style={{textAlign: 'center'}}>
                                     <Link to='/' style={{textDecoration: 'none'}}>
-                                        <DropDownLi onClick={() => this.setSelectedStateView("Forside")} style={{display: this.props.selectedPage !== "Forside" ? "flex" : "none"}}>
+                                        <DropDownLi onClick={() => this.setSelectedStateView("Forside")} style={{display: this.props.selectedPage !== "Forside" ? "flex" : "none", border: '1px solid #00000050'}}>
                                             Forside 
                                         </DropDownLi>
                                     </Link>
                                     <Link to='/Erfaring' style={{textDecoration: 'none'}}>
-                                        <DropDownLi onClick={() => this.setSelectedStateView("Erfaring")} style={{display: this.props.selectedPage !== "Erfaring" ? "flex" : "none"}}> 
+                                        <DropDownLi onClick={() => this.setSelectedStateView("Erfaring")} style={{display: this.props.selectedPage !== "Erfaring" ? "flex" : "none", border: '1px solid #00000050'}}> 
                                             Erfaring 
                                         </DropDownLi>
                                     </Link>
                                     <Link to='/Uddannelse' style={{textDecoration: 'none'}}>
-                                        <DropDownLi onClick={() => this.setSelectedStateView("Uddannelse")} style={{display: this.props.selectedPage !== "Uddannelse" ? "flex" : "none"}}>
+                                        <DropDownLi onClick={() => this.setSelectedStateView("Uddannelse")} style={{display: this.props.selectedPage !== "Uddannelse" ? "flex" : "none", border: '1px solid #00000050'}}>
                                             Uddannelse 
                                         </DropDownLi>
                                     </Link>

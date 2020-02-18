@@ -1,11 +1,12 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
 
-import { FrontPageView, FrontPageBackground, FrontPageHeader, StickyElement, InformationHeader, InformationDiv, ElementTypeDiv, RealElementDiv, SkillsAndToolsContainer, Picture, SkillsAndToolsHeader, SkillsAndToolsElements } from './Styled'
+import { FrontPageView, FrontPageBackground, FrontPageHeader, StickyElement, InformationHeader, InformationDiv, ElementTypeDiv, RealElementDiv, SkillsAndToolsContainer, Picture, SkillsAndToolsHeader, SkillsAndToolsElements, LinkLogo } from './Styled'
 
 import { information, kontaktInformation, skillsArray, toolsArray } from '../../cvArrays/arrays'
 import { setSelectedPage } from '../../redux/actions';
-import picture from '../../theme/pictures/mig.png'
+import pictureMe from '../../theme/pictures/mig.png'
+import linkedInLogo from '../../theme/pictures/LI-In-Bug.png'
 
 interface Props {
     selectedPage: string;
@@ -62,10 +63,15 @@ class FrontPage extends React.Component<Props, State> {
                                 <ElementTypeDiv>{element.type}</ElementTypeDiv>
                                 <RealElementDiv>{element.content}</RealElementDiv>
                             </InformationDiv>)}
-                        </div>      
+                        </div>
+                        <div>
+                            <a href='https://www.linkedin.com/in/morten-marcussen-cramer-991344181' target="_blank">
+                                <LinkLogo src={linkedInLogo} alt={linkedInLogo}/>
+                            </a>
+                        </div>  
                     </FrontPageView>
                     <StickyElement>
-                        <Picture src={picture} alt={picture}/>
+                        <Picture src={pictureMe} alt={pictureMe}/>
                         <SkillsAndToolsContainer>
                             <SkillsAndToolsHeader>Skills</SkillsAndToolsHeader>
                                 {skills.map((element: any) =>

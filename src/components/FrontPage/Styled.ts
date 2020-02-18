@@ -75,6 +75,11 @@ export const Picture = styled.img`
     height: 355px;
 `;
 
+export const LinkLogo = styled.img`
+    height: 50px;
+    margin: 40px;
+`;
+
 export const SkillsAndToolsContainer = styled.div`
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.50);
     border-radius: 25px;
