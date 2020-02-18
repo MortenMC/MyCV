@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
 
-import { FrontPageView, FrontPageBackground, FrontPageHeader, StickyElement, InformationHeader, InformationDiv, ElementTypeDiv, RealElementDiv } from './Styled'
+import { FrontPageView, FrontPageBackground, FrontPageHeader, StickyElement, InformationHeader, InformationDiv, ElementTypeDiv, RealElementDiv, SkillsAndToolsContainer, Picture, SkillsAndToolsHeader, SkillsAndToolsElements } from './Styled'
 
-import { information, kontaktInformation } from '../../cvArrays/arrays'
+import { information, kontaktInformation, skillsArray, toolsArray } from '../../cvArrays/arrays'
 import { setSelectedPage } from '../../redux/actions';
 import picture from '../../theme/pictures/mig.png'
 
@@ -32,8 +32,10 @@ class FrontPage extends React.Component<Props, State> {
 
     render() {
 
-        const informations = information
-        const kontakt = kontaktInformation
+        const informations = information;
+        const kontakt = kontaktInformation;
+        const skills = skillsArray;
+        const tools = toolsArray;
         return (
             <FrontPageBackground>
                 <div style={{ display: 'flex', width: '70%', justifyContent: 'space-between'}}>  
@@ -62,8 +64,21 @@ class FrontPage extends React.Component<Props, State> {
                             </InformationDiv>)}
                         </div>      
                     </FrontPageView>
-
-                    <StickyElement src={picture} alt={picture}/>
+                    <StickyElement>
+                        <Picture src={picture} alt={picture}/>
+                        <SkillsAndToolsContainer>
+                            <SkillsAndToolsHeader>Skills</SkillsAndToolsHeader>
+                                {skills.map((element: any) =>
+                                    <SkillsAndToolsElements>{element.skill}</SkillsAndToolsElements>
+                                )}
+                                
+                            <SkillsAndToolsHeader>Tools</SkillsAndToolsHeader>
+                                {tools.map((element: any) =>
+                                    <SkillsAndToolsElements>{element.tool}</SkillsAndToolsElements>
+                                )}
+                        </SkillsAndToolsContainer>
+                    </StickyElement>
+                    
 
                 </div>
             </FrontPageBackground>

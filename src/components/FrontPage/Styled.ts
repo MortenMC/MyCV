@@ -44,7 +44,7 @@ export const InformationDiv = styled.div`
 
 export const ElementTypeDiv = styled.div`
     font-size: 20px;
-    width: 100px;
+    width: 150px;
     font-weight: 700;
     text-transform: uppercase;
     text-align: left;
@@ -59,14 +59,42 @@ export const RealElementDiv = styled.div`
     margin: 10px;
 `;
 
-
-export const StickyElement = styled.img`
+export const StickyElement = styled.div`
     position: -webkit-sticky;
     position: sticky;
+    top: 50px;
+    height: 10px;
+    width: auto;
+    margin-left 50px;
+`;
+
+
+export const Picture = styled.img`
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.50);
     border-radius: 25px;
     height: 355px;
-    top: 50px;
-    margin-left 50px;
 `;
+
+export const SkillsAndToolsContainer = styled.div`
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.50);
+    border-radius: 25px;
+    height: auto;
+    background-color: ${colors.modernLightGrey};
+    margin-top: 20px;
+    padding-bottom: 10px;
+`;
+
+export const SkillsAndToolsHeader = styled.h1`
+    border-bottom: 1px solid black;
+    margin: 20px;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 20px;
+`;
+
+export const SkillsAndToolsElements = styled.p`
+    text-align: center
+
+`;
+
 
