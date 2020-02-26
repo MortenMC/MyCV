@@ -54,6 +54,9 @@ export const skillsArray = [
     },
     {
         skill: 'HTML/CSS'
+    },
+    {
+        skill: 'SCRUM/XP'
     }
 ]
 
@@ -87,6 +90,129 @@ export const experienceArray = [
     },
 ]
 
+export const educationArray = [
+    {
+        year: '2011',
+        education: '9',
+        title: '9. klasses afgangseksamen'
+    },
+    {
+        year: '2012',
+        education: '10',
+        title: '10. klasses afgangseksamen'
+    },
+    {
+        year: '2014 - 2016',
+        education: 'HF',
+        title: '2-årig HF - VUC Roskilde'
+    },
+    {
+        year: '2017 - 2020',
+        education: 'Datamatiker',
+        title: 'Datamatiker - Zealand',
+        description: 'Færdiggjorde uddannelsen den 27. januar 2020, med et 10-tal.'
+    },
+
+]
+
+export const developmentArray = [ 
+        {
+            method: 'SCRUM'
+        },
+        {
+            method: 'XP'
+        }
+    ];
+
+export const programmingArray = [
+        {
+            language: 'C#'
+        },
+        {
+            language: 'XAML'
+        },
+        {
+            language: 'TypeScript'
+        },
+        {
+            language: 'HTML'
+        }
+    ];
+
+export const technologiesArray= [
+        {
+            tech: 'DB'
+        },
+        {
+            tech: 'REST'
+        },
+        {
+            tech: 'API'
+        },
+        {
+            tech: 'TCP'
+        },
+        {
+            tech: 'UDP'
+        },
+    ];
+
+export const othersArray = [
+        {
+            software: 'Github'
+        },
+        {
+            software: 'Azure'
+        },
+        {
+            software: 'Ubuntu'
+        }
+    ];
+
+
+
+
+export const testArray = [
+    {
+        header: 'Test',
+        languages: [
+            {
+                language: 'C#'
+            },
+            {
+                language: 'XAML'
+            },
+            {
+                language: 'TypeScript'
+            },
+            {
+                language: 'HTML'
+            }
+        ]
+
+    },
+    {
+        header: 'Test1',
+        languages: [
+            {
+                language: 'Hej'
+            },
+            {
+                language: 'XAML'
+            },
+            {
+                language: 'TypeScript'
+            },
+            {
+                language: 'HTML'
+            }
+        ]
+
+    }
+]
+
 export default {
-    information, kontaktInformation, skillsArray, toolsArray, experienceArray
+    information, kontaktInformation, skillsArray, toolsArray, experienceArray, 
+    educationArray, developmentArray, programmingArray, technologiesArray, othersArray,
+    testArray
 }

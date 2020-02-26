@@ -9,8 +9,11 @@ class TopBar extends React.Component {
             <TopBarView>
                 <TopBarContent>
                     <div style={{display: 'flex', alignItems: 'center', marginLeft: '20px'}}>
+                    <div>Logo</div>
+                    </div>
+                    <div style={{display: 'flex', alignItems: 'center', marginLeft: '200px'}}>
                         <div style={{fontSize: '25px', color: 'black', fontWeight: 600}}>
-                                CV - Morten Marcussen Cramer
+                                CV
                         </div>
                     </div>
 

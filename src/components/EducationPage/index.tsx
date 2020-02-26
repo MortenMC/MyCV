@@ -2,6 +2,8 @@ import * as React from 'react';
 import { connect } from 'react-redux';
 
 import { setSelectedPage } from '../../redux/actions';
+import { EducationPageBackground, EducationPageView, EducationHeader, EducationDescription, EducationContentView, TimeLineContainer, WorkedWithDiv, WorkedWithElementDiv, WorkedWithHeader, WorkedWithContainer} from './Styled';
+import { educationArray, developmentArray, technologiesArray, programmingArray, othersArray, testArray } from '../../cvArrays/arrays';
 
 interface Props {
     selectedPage: string;
@@ -29,9 +31,74 @@ class EducationPage extends React.Component<Props, State> {
 
     render() {
         return (
-            <div>
-                EducationPage 
-            </div>
+            <EducationPageBackground>
+                <div style={{width: '70%', maxWidth: '70%'}}>
+                    <EducationHeader>Uddannelse</EducationHeader>
+                    {educationArray.map((element: any) =>
+                    <div style={{width: '100%', display: 'flex'}}>
+                        <TimeLineContainer/>
+                        <EducationPageView>
+                            <EducationContentView>
+                                <div style={{ width: '50%'}}>
+                                    <div style={{margin: '30px', textAlign: 'center', fontSize: '20px'}}>{element.year}</div>
+                                </div>
+                                    
+                                <div style={{height: '80px', width: '2px', backgroundColor: '#00000025', margin: '20px'}}></div>
+                                <div style={{ width: '50%'}}>
+                                    <div style={{margin: '30px', textAlign: 'center', fontSize: '20px'}}>{element.title}</div>
+                                </div>
+                            </EducationContentView>
+
+                            {element.education === 'Datamatiker' ?
+                            <div>
+                                <EducationDescription>{element.description}</EducationDescription>
+                                <WorkedWithHeader>Datamatiker studiet</WorkedWithHeader>
+                                <p style={{marginBottom: '50px'}}>
+                                    Metoder og teknologier jeg har arbejdet med under studiet
+                                </p>
+
+                                <h2>Agile arbejdsmetoder</h2>
+                                <WorkedWithContainer>
+                                    {developmentArray.map((element: any) => 
+                                    <WorkedWithDiv>
+                                        <WorkedWithElementDiv>{element.method}</WorkedWithElementDiv>
+                                    </WorkedWithDiv>)}
+                                </WorkedWithContainer>
+
+                                <h2>Sprog</h2>
+                                <WorkedWithContainer>
+                                    {programmingArray.map((element: any) => 
+                                    <WorkedWithDiv>
+                                        <WorkedWithElementDiv>{element.language}</WorkedWithElementDiv>
+                                    </WorkedWithDiv>)}
+                                </WorkedWithContainer>
+
+                                <h2>Teknologier</h2>
+                                <WorkedWithContainer>
+                                    {technologiesArray.map((element: any) => 
+                                    <WorkedWithDiv>
+                                        <WorkedWithElementDiv>{element.tech}</WorkedWithElementDiv>
+                                    </WorkedWithDiv>)}
+                                </WorkedWithContainer>
+
+                                <h2>Andet</h2>
+                                <WorkedWithContainer>
+                                    {othersArray.map((element: any) => 
+                                    <WorkedWithDiv>
+                                        <WorkedWithElementDiv>{element.software}</WorkedWithElementDiv>
+                                    </WorkedWithDiv>)}
+                                </WorkedWithContainer>
+                                
+                            </div>
+                            :
+                            null
+                            }
+
+                        </EducationPageView>
+                        <TimeLineContainer/>
+                    </div>)}
+                </div>
+            </EducationPageBackground>
         )
     }
 }
