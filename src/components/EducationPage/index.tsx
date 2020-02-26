@@ -2,8 +2,8 @@ import * as React from 'react';
 import { connect } from 'react-redux';
 
 import { setSelectedPage } from '../../redux/actions';
-import { EducationPageBackground, EducationPageView, EducationHeader, EducationDescription, EducationContentView, TimeLineContainer, WorkedWithDiv, WorkedWithElementDiv, WorkedWithHeader, WorkedWithContainer} from './Styled';
-import { educationArray, developmentArray, technologiesArray, programmingArray, othersArray, testArray } from '../../cvArrays/arrays';
+import { EducationPageBackground, EducationPageView, EducationHeader, EducationDescription, EducationContentView, TimeLineContainer, WorkedWithDiv, WorkedWithElementDiv, WorkedWithHeader, WorkedWithContainer, InternshipDiv} from './Styled';
+import { educationArray, developmentArray, technologiesArray, programmingArray, othersArray, internshipArray } from '../../cvArrays/arrays';
 
 interface Props {
     selectedPage: string;
@@ -33,7 +33,7 @@ class EducationPage extends React.Component<Props, State> {
         return (
             <EducationPageBackground>
                 <div style={{width: '70%', maxWidth: '70%'}}>
-                    <EducationHeader>Uddannelse</EducationHeader>
+                    <EducationHeader>Uddannelser</EducationHeader>
                     {educationArray.map((element: any) =>
                     <div style={{width: '100%', display: 'flex'}}>
                         <TimeLineContainer/>
@@ -88,6 +88,27 @@ class EducationPage extends React.Component<Props, State> {
                                         <WorkedWithElementDiv>{element.software}</WorkedWithElementDiv>
                                     </WorkedWithDiv>)}
                                 </WorkedWithContainer>
+
+                                <WorkedWithHeader>Praktikperiode</WorkedWithHeader>
+                                {internshipArray.map((element: any) =>
+                                <InternshipDiv>
+                                    <div style={{ width: '30%', margin: '20px' }}>
+                                        <div style={{ fontSize: '20px', fontWeight: 700, marginBottom: '40px', textTransform: 'uppercase' }}>
+                                            {element.firm}
+                                        </div>
+                                        <div style={{ fontSize: '20px', fontWeight: 700 }}>
+                                            {element.dateFrom} - {element.dateTo}
+                                        </div>
+                                    </div>
+                                    <div style={{ width: '70%', margin: '20px' }}>
+                                        <p style={{fontSize: '20px'}}>
+                                            {element.description}
+                                        </p>
+                                    </div>
+                                </InternshipDiv>)}
+                                
+
+
                                 
                             </div>
                             :

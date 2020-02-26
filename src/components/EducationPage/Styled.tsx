@@ -71,3 +71,14 @@ export const WorkedWithHeader = styled.h1`
     margin: 40px;
     margin-bottom: 10px;
 `;
+
+export const InternshipDiv = styled.div`
+    border: 2px solid #00000025;
+    border-radius: 25px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    margin-right: 40px;
+    margin-left: 40px;
+    display: flex;
+    align-items: center;
+`;

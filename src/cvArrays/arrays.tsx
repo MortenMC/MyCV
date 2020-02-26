@@ -169,6 +169,22 @@ export const othersArray = [
         }
     ];
 
+export const internshipArray = [
+    {
+        firm: 'MeeW',
+        dateFrom: 'September 2019',
+        dateTo: 'Oktober 2019',
+        description: 'Var en del af et agilt team, hvor jeg var med til at udvikle en mobil applikation i sprogene ReactNative og JavaScript. Det var samtidigt også første gang jeg stiftede bekendtskab med disse teknologier.'
+
+    },
+    {
+        firm: 'Infomedia',
+        dateFrom: 'Oktober 2019',
+        dateTo: 'November 2019',
+        description: 'Fortsatte med at arbejde i de ovennævnte sprog, hvor jeg videreudviklede deres applikation. Her var jeg en del af et team, der gjorde brug af agile arbejdsmetoder, som SCRUM og XP.'
+    }
+] 
+
 
 
 
@@ -214,5 +230,5 @@ export const testArray = [
 export default {
     information, kontaktInformation, skillsArray, toolsArray, experienceArray, 
     educationArray, developmentArray, programmingArray, technologiesArray, othersArray,
-    testArray
+    internshipArray, testArray
 }
