@@ -26,7 +26,7 @@ class EducationPage extends React.Component<Props, State> {
     }
 
     componentDidMount() {
-        this.props.setSelectedPage('Uddannelse')
+        this.props.setSelectedPage('Uddannelser')
     }
 
     render() {
@@ -106,9 +106,13 @@ class EducationPage extends React.Component<Props, State> {
                                         </p>
                                     </div>
                                 </InternshipDiv>)}
-                                
 
-
+                                <WorkedWithHeader>Hovedopgave</WorkedWithHeader>
+                                <InternshipDiv>
+                                    <p style={{margin: '20px', fontSize: '20px'}}>
+                                        Jeg og tre klassekammerater dannede et team i forbindelse med vores hovedopgave, hvor vi i samarbejde med firmaet, Infomedia, på baggrund af deres ønsker, har udviklet systemet, ARMA (Approve Reject Media Analysis). Systemet vi har udviklet, er grundstenene for et redesign af deres allerede eksisterende system, GAMA (Godkendt Afvist Media Analysis), som det er tiltænkt at skulle erstatte. Vi havde fordelt arbejdet således, at to arbejdede på backenden og to på frontenden. Jeg var en af de to, som tog sig af frontend, hvilket vi har udviklet i sprogene, React og TypeScript
+                                    </p>
+                                </InternshipDiv>
                                 
                             </div>
                             :

@@ -2,7 +2,7 @@ import * as React from 'react';
 import { connect } from 'react-redux';
 
 import { setSelectedPage } from '../../redux/actions';
-import { ExperiencePageBackground, ExperiencePageView, TimeLineContainer, ExperienceHeader, TimeLine, TimeLineCircle } from './Styled'
+import { ExperiencePageBackground, ExperiencePageView, TimeLineContainer, ExperienceHeader } from './Styled'
 import { experienceArray } from '../../cvArrays/arrays'
 
 
@@ -34,7 +34,7 @@ class ExperiencePage extends React.Component<Props, State> {
         return (
             <ExperiencePageBackground>
                 
-                <div style={{width: '70%'}}>
+                <div style={{width: '70%', maxWidth: '70%'}}>
                     <ExperienceHeader>Erhvervserfaring</ExperienceHeader>
                     {experiences.map((element: any) =>
                         <div style={{width: '100%', display: 'flex'}}>

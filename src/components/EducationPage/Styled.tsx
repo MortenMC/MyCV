@@ -35,6 +35,7 @@ export const EducationHeader = styled.h1`
 `;
 
 export const EducationDescription = styled.p`
+    font-size: 20px;
 `;
 
 export const TimeLineContainer = styled.div`

@@ -77,14 +77,14 @@ class SelectedPageDropDown extends React.Component<Props, State>{
                                             Forside 
                                         </DropDownLi>
                                     </Link>
-                                    <Link to='/Erfaring' style={{textDecoration: 'none'}}>
+                                    <Link to='/Erhvervserfaring' style={{textDecoration: 'none'}}>
                                         <DropDownLi onClick={() => this.setSelectedStateView("Erfaring")} style={{display: this.props.selectedPage !== "Erfaring" ? "flex" : "none", border: '1px solid #00000050'}}> 
                                             Erfaring 
                                         </DropDownLi>
                                     </Link>
-                                    <Link to='/Uddannelse' style={{textDecoration: 'none'}}>
-                                        <DropDownLi onClick={() => this.setSelectedStateView("Uddannelse")} style={{display: this.props.selectedPage !== "Uddannelse" ? "flex" : "none", border: '1px solid #00000050'}}>
-                                            Uddannelse 
+                                    <Link to='/Uddannelser' style={{textDecoration: 'none'}}>
+                                        <DropDownLi onClick={() => this.setSelectedStateView("Uddannelser")} style={{display: this.props.selectedPage !== "Uddannelser" ? "flex" : "none", border: '1px solid #00000050'}}>
+                                            Uddannelser
                                         </DropDownLi>
                                     </Link>
                                 </div>

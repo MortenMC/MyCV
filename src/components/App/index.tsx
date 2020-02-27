@@ -17,8 +17,8 @@ const App: React.FC = () => {
       <Router>
         <Layout>
           <Switch>
-            <Route path='/Uddannelse' component={EducationPage}/>
-            <Route path='/Erfaring' component={ExperiencePage}/>
+            <Route path='/Uddannelser' component={EducationPage}/>
+            <Route path='/Erhvervserfaring' component={ExperiencePage}/>
             <Route path='/' component={FrontPage}/>
           </Switch>
           

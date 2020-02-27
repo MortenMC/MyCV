@@ -16,7 +16,7 @@ export const TopBarContent = styled.div`
 `;
 
 export const DropDownBody = styled.div`
-    width: 250px;
+    width: 270px;
     max-width : 100%;
 `;
 
